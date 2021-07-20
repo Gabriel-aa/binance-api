@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1625938976883" clover="3.2.0">
+  <project timestamp="1625938976883" name="All files">
+    <metrics statements="45" coveredstatements="35" conditionals="28" coveredconditionals="23" methods="13" coveredmethods="7" elements="86" coveredelements="65" complexity="0" loc="45" ncloc="45" packages="2" files="3" classes="3"/>
+    <package name="exchanges.binance">
+      <metrics statements="39" coveredstatements="29" conditionals="26" coveredconditionals="21" methods="12" coveredmethods="6"/>
+      <file name="BinanceRequestMaker.ts" path="/home/node/app/src/exchanges/binance/BinanceRequestMaker.ts">
+        <metrics statements="34" coveredstatements="24" conditionals="24" coveredconditionals="19" methods="11" coveredmethods="5"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="13" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="19" count="4" type="stmt"/>
+        <line num="21" count="4" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="31" count="4" type="stmt"/>
+        <line num="36" count="4" type="stmt"/>
+        <line num="46" count="4" type="stmt"/>
+        <line num="48" count="4" type="stmt"/>
+        <line num="49" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="50" count="2" type="stmt"/>
+        <line num="53" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="60" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="61" count="3" type="stmt"/>
+        <line num="64" count="4" type="stmt"/>
+        <line num="66" count="4" type="stmt"/>
+        <line num="70" count="1" type="stmt"/>
+        <line num="74" count="1" type="stmt"/>
+        <line num="78" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="79" count="0" type="stmt"/>
+        <line num="82" count="0" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="87" count="0" type="stmt"/>
+        <line num="92" count="0" type="stmt"/>
+        <line num="95" count="0" type="stmt"/>
+        <line num="98" count="0" type="stmt"/>
+        <line num="99" count="0" type="stmt"/>
+        <line num="104" count="1" type="stmt"/>
+      </file>
+      <file name="types.ts" path="/home/node/app/src/exchanges/binance/types.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="helpers">
+      <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="requestHelper.ts" path="/home/node/app/src/helpers/requestHelper.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="6" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="9" count="6" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
