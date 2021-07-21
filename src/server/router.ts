@@ -5,8 +5,8 @@ import BinanceCoinInfo from "../exchanges/binance/coin/BinanceCoinInfo";
 import BinanceTrade from "../exchanges/binance/trade/BinanceTrade";
 import TradeRepository from "../repositories/mysql/TradeRepository";
 
-var express = require("express");
-var router = express.Router();
+const express = require("express");
+const router = express.Router();
 
 router.post("/trade", async (req: Request, res: Response) => {
   const repository = new TradeRepository();
