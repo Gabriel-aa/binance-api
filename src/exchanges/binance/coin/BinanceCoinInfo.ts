@@ -18,18 +18,13 @@ class BinanceCoinInfo implements IExchangeCoinInfo {
   }
 
   async getQuantityEdges(symbol: string) {
-    try {
-      const info = await this.getCoinInfo(symbol);
-      const filter = this.findFilter(info.symbols[0].filters, "LOT_SIZE");
+    const info = await this.getCoinInfo(symbol);
+    const filter = this.findFilter(info.symbols[0].filters, "LOT_SIZE");
 
-      return {
-        maxNumber: Math.round(Number(filter?.maxQty || "0")).toString().length,
-        maxDecimals: countDecimals(Number(filter?.minQty || 0)),
-      };
-    } catch (error) {
-      console.log(error);
-      throw new Error("Erro ao buscar o filtro LOT_SIZE");
-    }
+    return {
+      maxNumber: Math.round(Number(filter?.maxQty || "0")).toString().length,
+      maxDecimals: countDecimals(Number(filter?.minQty || 0)),
+    };
   }
 
   async getCoinInfo(symbol: string): Promise<any> {

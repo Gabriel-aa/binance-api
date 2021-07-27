@@ -1,3 +1,4 @@
+import ValidationError from "../../../errors/ValidationError";
 import Trade from "./Trade";
 import { TradeOcoProps } from "./TradeTypes";
 
@@ -9,6 +10,12 @@ class TradeOco extends Trade {
 
   constructor(props: TradeOcoProps) {
     super({ coin: props.coin });
+
+    if (props.stopLimitPrice > props.stopPrice) {
+      throw new ValidationError(
+        "stopLimitPrice should be equal or lower than stopPrice"
+      );
+    }
 
     Object.assign(this, props);
   }

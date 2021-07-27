@@ -1,0 +1,28 @@
+plugins:
+  - serverless-offline
+  - serverless-plugin-typescript-express
+
+service: binance-app-back
+useDotenv: true
+configValidationMode: error
+
+custom:
+  serverless-offline:
+    noPrependStageInUrl: true
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: dev
+  region: us-east-1
+
+functions:
+  app:
+    handler: src/server/lambda.handler
+    events:
+      - http:
+          path: / # this matches the base path
+          method: ANY
+      - http:
+          path: /{any+} # this matches any path, the token 'any' doesn't mean anything special
+          method: ANY

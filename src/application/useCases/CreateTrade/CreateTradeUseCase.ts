@@ -28,16 +28,11 @@ class CreateTradeUseCase {
   }
 
   async makeOcoTrade(trade: TradeOco) {
-    try {
-      const { id: exchangeId } = await this.exchangeTrade.create(trade);
-      trade.setExchangeId(exchangeId);
-      await this.tradeRepository.save(trade);
+    const { id: exchangeId } = await this.exchangeTrade.create(trade);
+    trade.setExchangeId(exchangeId);
+    await this.tradeRepository.save(trade);
 
-      return exchangeId;
-    } catch (error) {
-      console.log(error);
-      throw new Error("Erro ao criar OCO");
-    }
+    return exchangeId;
   }
 
   async createByTargets(data: ICreateTradeDTO): Promise<TradeOco[]> {

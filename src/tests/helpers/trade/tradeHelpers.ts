@@ -1,21 +1,16 @@
-import {
-  TradeProps,
-  TRADE_TYPES,
-} from "../../../application/entities/Trade/TradeTypes";
+import { TradeOcoProps } from "../../../application/entities/Trade/TradeTypes";
 
-const getRandomProps = (): TradeProps => {
+const getRandomProps = (): TradeOcoProps => {
   return {
-    type: TRADE_TYPES.DAY_TRADE,
-    coin: "ada/usdt",
-    buyAt: 10,
-    target1: 11,
-    target2: 12,
-    target3: 13,
-    stopLoss: 9,
+    coin: "ADAUSDT",
+    price: 10,
+    quantity: 1,
+    stopPrice: 9,
+    stopLimitPrice: 8,
   };
 };
 
-export const getTradeProps = (props = {}): TradeProps => {
+export const getTradeProps = (props = {}): TradeOcoProps => {
   return {
     ...getRandomProps(),
     ...props,
