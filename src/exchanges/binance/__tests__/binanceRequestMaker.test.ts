@@ -33,7 +33,11 @@ describe("BinanceRequestMaker tests", () => {
   it("should not build a signature if requested", async () => {
     await requestMaker.request({
       url: "test",
-      config: { needsSignatue: false, needsTimestamp: true, needsToken: true },
+      config: {
+        needsSignature: false,
+        needsTimestamp: true,
+        needsToken: true,
+      },
     });
 
     expect(axiosMock.history.get[0].headers["X-MBX-APIKEY"]).toBeDefined();
@@ -45,7 +49,11 @@ describe("BinanceRequestMaker tests", () => {
   it("should not build a timestamp if requested", async () => {
     await requestMaker.request({
       url: "test",
-      config: { needsSignatue: false, needsTimestamp: false, needsToken: true },
+      config: {
+        needsSignature: false,
+        needsTimestamp: false,
+        needsToken: true,
+      },
     });
 
     expect(axiosMock.history.get[0].headers["X-MBX-APIKEY"]).toBeDefined();
@@ -56,7 +64,7 @@ describe("BinanceRequestMaker tests", () => {
     await requestMaker.request({
       url: "test",
       config: {
-        needsSignatue: false,
+        needsSignature: false,
         needsTimestamp: false,
         needsToken: false,
       },

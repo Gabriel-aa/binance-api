@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from "axios";
+import axios, { AxiosPromise, AxiosResponse } from "axios";
 import { createHmac } from "crypto";
 import { formatProps } from "../../helpers/requestHelper";
 import { BinanceRequest, MethodType } from "./types";
@@ -15,7 +15,7 @@ class BinanceRequestMaker {
     this.binanceApiKey = process.env.BINANCE_API_KEY || "";
   }
 
-  async request(binanceRequest: BinanceRequest): Promise<AxiosResponse> {
+  async request(binanceRequest: BinanceRequest): Promise<AxiosPromise> {
     const { formattedUrl, headers } = await this.getRequestInfo(binanceRequest);
 
     return axios({
@@ -36,7 +36,7 @@ class BinanceRequestMaker {
     const {
       url,
       config = {
-        needsSignatue: true,
+        needsSignature: true,
         needsTimestamp: true,
         needsToken: true,
       },
@@ -49,7 +49,7 @@ class BinanceRequestMaker {
       params.timestamp = await this.getTimestamp();
     }
 
-    if (config.needsSignatue) {
+    if (config.needsSignature) {
       params.signature = this.buildSignature({
         params: formatProps(params),
         body: formatProps(data),

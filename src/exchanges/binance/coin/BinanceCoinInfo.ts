@@ -35,7 +35,7 @@ class BinanceCoinInfo implements IExchangeCoinInfo {
         symbol,
       },
       config: {
-        needsSignatue: false,
+        needsSignature: false,
         needsTimestamp: false,
         needsToken: true,
       },

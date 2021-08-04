@@ -10,7 +10,7 @@ export type AnyObject = {
 };
 
 export type ConfigType = {
-  needsSignatue: boolean;
+  needsSignature: boolean;
   needsToken: boolean;
   needsTimestamp: boolean;
 };

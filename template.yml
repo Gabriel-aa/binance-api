@@ -1,0 +1,17 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  binance back lambda
+
+Resources:
+  BinanceAppSqsLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: Binance app lambda backend
+      FunctionName: binance-app-back
+      Runtime: nodejs14.x
+      CodeUri: "dist"
+      Handler: server/lambda.handler
+      Environment:
+        Variables:
+          BINANCE_URL: https://api.binance.com

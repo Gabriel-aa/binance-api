@@ -24,11 +24,15 @@ class BinanceTrade implements IExtendTrade {
         stopLimitTimeInForce: "GTC",
       },
       config: {
-        needsSignatue: true,
+        needsSignature: true,
         needsTimestamp: true,
         needsToken: true,
       },
     });
+
+    if (result.status !== 200) {
+      throw new Error(JSON.stringify(result));
+    }
 
     return { id: result.data.orderListId };
   }
